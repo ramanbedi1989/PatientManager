@@ -1,0 +1,23 @@
+<h1>Listing id_proofs</h1>
+
+<table>
+  <tr>
+    <th>Id proof</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @id_proofs.each do |id_proof| %>
+  <tr>
+    <td><%= id_proof.id_proof %></td>
+    <td><%= link_to 'Show', id_proof %></td>
+    <td><%= link_to 'Edit', edit_id_proof_path(id_proof) %></td>
+    <td><%= link_to 'Destroy', id_proof, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Id proof', new_id_proof_path %>

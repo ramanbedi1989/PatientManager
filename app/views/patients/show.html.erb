@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @patient.name %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @patient.gender %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @patient.age %>
+</p>
+
+<p>
+  <b>Id Proof Name: </b>
+  <%= @patient.id_proof.id_proof%>
+</p>
+
+<p>
+  <b>Id Proof Number: </b>
+  <%= @patient.id_proof_number%>
+</p>
+
+<p>
+  <b>Mobile/Phone Number: </b>
+  <%= @patient.mobile%>
+</p>
+
+<p>
+  <b>Father's/Spouse's Name: </b>
+  <%= @patient.father_spouse%>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= format_date(@patient.updated_at) %>
+</p>
+
+<p>
+  <b>Medical Departments:</b>
+  <%= @patient.medical_departments.map(&:medical_department).join(", ") %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @patient.address %>
+</p>
+
+<p>
+  <b>District: </b>
+  <%= @patient.district.district%>
+</p>
+
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %> |
+<%= link_to 'Print', controller: :patients, action: :download , id: @patient.id %>
