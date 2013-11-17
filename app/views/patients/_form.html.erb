@@ -48,8 +48,24 @@
     <%= f.text_area :address ,rows: 5, cols: 25%>
   </div>
   <div class="field">
-    <%= f.label :district %><br />
-    <%= f.collection_select  :district_id , District.all , :id , :district %>
+    <%= f.label :town %><br />
+    <%= f.collection_select  :town_id , Town.all , :id , :town %>
+  </div>
+  <div class="field">
+    <%= f.label :treatment_given %><br />
+    <%= f.text_area :treatment ,rows: 5, cols: 25%>
+  </div>
+  <div class="field">
+    <%= f.label :medicines_given %><br />
+    <%= f.text_area :medicines ,rows: 5, cols: 25%>
+  </div>
+  <div class="field">
+    <%= f.label :services_provided %><br />
+    <%= f.text_area :services ,rows: 5, cols: 25%>
+  </div>
+  <div class="field">
+    <%= f.label :special_instructions %><br />
+    <%= f.text_area :special_instructions ,rows: 5, cols: 25%>
   </div>
   <div class="actions">
     <%= f.submit %>

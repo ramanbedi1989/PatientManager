@@ -1,4 +1,7 @@
 PatientManager::Application.routes.draw do
+  resources :towns
+
+
   resources :districts
 
 

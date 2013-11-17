@@ -40,6 +40,11 @@
         <%= link_to 'New Department', new_medical_department_path ,{class: "sidebar-sub-item"}%>
         <%= link_to 'All Departments', medical_departments_path ,{class: "sidebar-sub-item"}%>
       </div>
+      <a href="javascript:void(0)" class="list-group-item" data-toggle="collapse" data-target="#sidebar-item-3">Towns<span class="badge"><%= Town.count%></span></a>
+      <div id="sidebar-item-3" class="collapse sidebar-item">
+        <%= link_to 'New Town', new_town_path ,{class: "sidebar-sub-item"}%>
+        <%= link_to 'All Towns', towns_path ,{class: "sidebar-sub-item"}%>
+      </div>
       <a href="javascript:void(0)" class="list-group-item" data-toggle="collapse" data-target="#sidebar-item-3">Districts<span class="badge"><%= District.count%></span></a>
       <div id="sidebar-item-3" class="collapse sidebar-item">
         <%= link_to 'New District', new_district_path ,{class: "sidebar-sub-item"}%>
