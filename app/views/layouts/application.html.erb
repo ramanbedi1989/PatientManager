@@ -5,10 +5,57 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <style type="text/css">
+    .sidebar-item{
+      border: 1px solid #dddddd;
+    }
+    .sidebar-top-margin{
+      margin-top: 50px;
+    }
+    .sidebar-sub-item{
+      color: #000;
+      margin: 5px 10px;
+      display: block;
+    }
+    .sidebar-sub-item:hover{
+      text-decoration: none;
+      color: #fff;
+      background-color: #428bca;
+      border-color: #428bca;
+    }
+  </style>
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+  <div class="col-md-2">
+    <div class="list-group sidebar-top-margin">
+      <a href="javascript:void(0)" class="list-group-item" data-toggle="collapse" data-target="#sidebar-item-1">Patients<span class="badge"><%= Patient.count%></span></a>
+      <div id="sidebar-item-1" class="collapse sidebar-item">
+        <%= link_to 'New Patient', new_patient_path ,{class: "sidebar-sub-item"}%>
+        <%= link_to 'All Patients', patients_path ,{class: "sidebar-sub-item"}%>
+      </div>
+      <a href="javascript:void(0)" class="list-group-item" data-toggle="collapse" data-target="#sidebar-item-2">Departments<span class="badge"><%= MedicalDepartment.count%></span></a>
+      <div id="sidebar-item-2" class="collapse sidebar-item">
+        <%= link_to 'New Department', new_medical_department_path ,{class: "sidebar-sub-item"}%>
+        <%= link_to 'All Departments', medical_departments_path ,{class: "sidebar-sub-item"}%>
+      </div>
+      <a href="javascript:void(0)" class="list-group-item" data-toggle="collapse" data-target="#sidebar-item-3">Districts<span class="badge"><%= District.count%></span></a>
+      <div id="sidebar-item-3" class="collapse sidebar-item">
+        <%= link_to 'New District', new_district_path ,{class: "sidebar-sub-item"}%>
+        <%= link_to 'All Districts', districts_path ,{class: "sidebar-sub-item"}%>
+      </div>
+      <a href="javascript:void(0)" class="list-group-item" data-toggle="collapse" data-target="#sidebar-item-4">Id Proofs<span class="badge"><%= IdProof.count%></span></a>
+      <div id="sidebar-item-4" class="collapse sidebar-item">
+        <%= link_to 'New Id Proof', new_id_proof_path ,{class: "sidebar-sub-item"}%>
+        <%= link_to 'All Id Proofs', id_proofs_path ,{class: "sidebar-sub-item"}%>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-10">
+    <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>

@@ -26,4 +26,5 @@ $(document).ready(function(){
             "sSwfPath": "/swf/copy_csv_xls_pdf.swf"
         }
   });
+ // $('.collapse').collapse();
 });
