@@ -27,6 +27,7 @@ group :production do
   gem 'pg'
 end
 
+gem 'thin'
 gem 'prawn'
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 gem 'jquery-rails'
