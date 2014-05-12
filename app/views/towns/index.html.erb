@@ -1,23 +1,26 @@
 <h1>Listing towns</h1>
 
-<table>
-  <tr>
-    <th>Town</th>
-    <th>District</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @towns.each do |town| %>
-  <tr>
-    <td><%= town.town %></td>
-    <td><%= town.district.district %></td>
-    <td><%= link_to 'Show', town %></td>
-    <td><%= link_to 'Edit', edit_town_path(town) %></td>
-    <td><%= link_to 'Destroy', town, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<table class="datatable table table-striped">
+  <thead>  
+    <tr>
+      <th>Town</th>
+      <th>District</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @towns.each do |town| %>
+    <tr>
+      <td><%= town.town %></td>
+      <td><%= town.district.district %></td>
+      <td><%= link_to 'Show', town %></td>
+      <td><%= link_to 'Edit', edit_town_path(town) %></td>
+      <td><%= link_to 'Destroy', town, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
 </table>
 
 <br />

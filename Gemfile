@@ -7,7 +7,7 @@ gem 'rails', '3.2.15'
 
 gem 'sqlite3', :group => [:development, :test]
 gem 'debugger'
-
+gem 'chosen-rails'
 gem 'sass-rails',   '~> 3.2.3'
 gem 'coffee-rails', '~> 3.2.1'
 gem 'uglifier', '>= 1.0.3'
@@ -24,7 +24,8 @@ gem 'uglifier', '>= 1.0.3'
 #end
 
 group :production do
-  gem 'pg'
+  #gem 'pg'
+  gem 'mysql2' , '0.3.11'
 end
 
 gem 'thin'

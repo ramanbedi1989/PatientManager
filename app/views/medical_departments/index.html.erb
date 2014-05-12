@@ -1,21 +1,26 @@
 <h1>Listing medical_departments</h1>
 
-<table>
-  <tr>
+<table class="datatable table table-striped">
+<thead>  
+<tr>
     <th>Medical department</th>
+    <th>Room No</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-
+</thead>
+<tbody>
 <% @medical_departments.each do |medical_department| %>
   <tr>
     <td><%= medical_department.medical_department %></td>
+    <td><%= medical_department.room_no %></td>
     <td><%= link_to 'Show', medical_department %></td>
     <td><%= link_to 'Edit', edit_medical_department_path(medical_department) %></td>
     <td><%= link_to 'Destroy', medical_department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
