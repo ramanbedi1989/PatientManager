@@ -40,16 +40,16 @@
     <%= f.text_field :father_spouse %>
   </div>
   <div class="field">
-    <%= f.label :medical_department %><br />
-    <%= f.collection_select  :medical_department_ids , MedicalDepartment.all , :id , :medical_department , {} , multiple: true , size: 4 %>
-  </div>
-  <div class="field">
     <%= f.label :address %><br />
     <%= f.text_area :address ,rows: 5, cols: 25%>
   </div>
   <div class="field">
     <%= f.label :town %><br />
-    <%= f.collection_select  :town_id , Town.all , :id , :town %>
+    <%= f.collection_select  :town_id , Town.all , :id , :town, class: 'chosen-select' %>
+  </div>
+  <div class="field">
+    <%= f.label :medical_department %><br />
+    <%= f.collection_select  :medical_department_ids , MedicalDepartment.all , :id , :medical_department , {} , multiple: true , class: 'chosen-select' %>
   </div>
   <div class="field">
     <%= f.label :treatment_given %><br />

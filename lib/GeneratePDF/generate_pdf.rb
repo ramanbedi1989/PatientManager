@@ -25,7 +25,7 @@ class GeneratePDF
               lower_line_diff = 15
               index = 0
               patient.medical_departments.each do |dept|
-                pdf.draw_text "#{dept.medical_department}", at: [ initial_width + 12,initial_line - 4*line_diff - index*lower_line_diff]
+                pdf.draw_text "#{dept.medical_department}  #{dept.room_no}", at: [ initial_width ,initial_line - 4*line_diff - index*lower_line_diff]
                 index+=1
               end
             end

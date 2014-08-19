@@ -21,9 +21,9 @@ test:
   timeout: 5000
 
 production:
-  adapter: postgresql
+  adapter: mysql2
   database: patient_manager
-  pool: 5
+  pool: 25
   timeout: 5000
-  username: myapp
-  password:
+  username: root
+  password: root

@@ -18,6 +18,7 @@
 //= require dataTables/jquery.dataTables.bootstrap3
 //= require dataTables/extras/TableTools
 //= require dataTables/extras/ZeroClipboard.js
+//= require chosen-jquery
 //= require_tree .
 $(document).ready(function(){
   $('.datatable').dataTable({
@@ -27,5 +28,6 @@ $(document).ready(function(){
             "sSwfPath": "/swf/copy_csv_xls_pdf.swf"
         }
   });
+  $('.chosen-select').chosen({width:'200px'});
  // $('.collapse').collapse();
 });

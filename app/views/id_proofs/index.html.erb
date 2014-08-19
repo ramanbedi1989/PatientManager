@@ -1,13 +1,15 @@
 <h1>Listing id_proofs</h1>
 
-<table>
-  <tr>
+<table class="datatable table table-striped">
+<thead> 
+ <tr>
     <th>Id proof</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-
+</thead>
+<tbody>
 <% @id_proofs.each do |id_proof| %>
   <tr>
     <td><%= id_proof.id_proof %></td>
@@ -16,6 +18,7 @@
     <td><%= link_to 'Destroy', id_proof, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
