@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131117051404) do
+ActiveRecord::Schema.define(:version => 20140818183543) do
 
   create_table "districts", :force => true do |t|
     t.string   "district"
@@ -25,10 +25,24 @@ ActiveRecord::Schema.define(:version => 20131117051404) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "medical_camp_patient_relationships", :force => true do |t|
+    t.integer  "medical_camp_id"
+    t.integer  "patient_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "medical_camps", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "medical_departments", :force => true do |t|
     t.string   "medical_department"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.string   "room_no"
   end
 
   create_table "memberships", :force => true do |t|
@@ -41,7 +55,6 @@ ActiveRecord::Schema.define(:version => 20131117051404) do
   create_table "patients", :force => true do |t|
     t.string   "name"
     t.string   "gender"
-    t.integer  "age"
     t.text     "address"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
@@ -54,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20131117051404) do
     t.text     "medicines"
     t.text     "services"
     t.text     "special_instructions"
+    t.date     "dob"
   end
 
   create_table "towns", :force => true do |t|

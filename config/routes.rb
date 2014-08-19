@@ -1,4 +1,8 @@
 PatientManager::Application.routes.draw do
+
+  resources :medical_camps
+
+
   resources :towns
 
 
@@ -12,6 +16,7 @@ PatientManager::Application.routes.draw do
 
 
   resources :patients
+
   #get 'patients#download'
   match '/patients/download/:id' => 'patients#download'
 

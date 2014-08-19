@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  medical_camp_id: 1
+  patient_id: 1
+
+two:
+  medical_camp_id: 1
+  patient_id: 1

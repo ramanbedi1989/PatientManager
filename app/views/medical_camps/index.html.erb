@@ -1,0 +1,23 @@
+<h1>Listing medical_camps</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @medical_camps.each do |medical_camp| %>
+  <tr>
+    <td><%= link_to medical_camp.name, patients_path(medical_camp_id: medical_camp.id) %></td>
+    <td><%= link_to 'Show', medical_camp %></td>
+    <td><%= link_to 'Edit', edit_medical_camp_path(medical_camp) %></td>
+    <td><%= link_to 'Destroy', medical_camp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Medical camp', new_medical_camp_path %>

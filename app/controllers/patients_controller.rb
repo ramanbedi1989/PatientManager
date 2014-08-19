@@ -3,7 +3,8 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all
+  	medical_camp_id = session[:medical_camp_id]
+    @patients =  Patient.joins(:medical_camps).where("medical_camp_patient_relationships.medical_camp_id = ?", medical_camp_id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -84,6 +85,6 @@ class PatientsController < ApplicationController
   def download
     patient_id = params[:id]
     GeneratePDF.generate(patient_id)
-    send_file 'lib/output/new.pdf', type: "application/pdf", x_sendfile: true
+    send_file 'lib/output/new.pdf', type: "application/pdf", x_sendfile: true, disposition: :inline
   end
 end
