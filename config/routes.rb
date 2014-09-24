@@ -1,5 +1,27 @@
 PatientManager::Application.routes.draw do
 
+  devise_for :users
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  resources :special_instructions
+
+
+  resources :frequency_types
+
+
+  resources :dossage_types
+
+
+  resources :medicine_patient_relationships
+
+
+  resources :medicine_types
+
+
+  resources :medicines
+
+
   resources :medical_camps
 
 

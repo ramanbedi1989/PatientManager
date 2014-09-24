@@ -1,0 +1,23 @@
+<h1>Listing medicine_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @medicine_types.each do |medicine_type| %>
+  <tr>
+    <td><%= medicine_type.name %></td>
+    <td><%= link_to 'Show', medicine_type %></td>
+    <td><%= link_to 'Edit', edit_medicine_type_path(medicine_type) %></td>
+    <td><%= link_to 'Destroy', medicine_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Medicine type', new_medicine_type_path %>

@@ -1,0 +1,35 @@
+<h1>Listing medicine_patient_relationships</h1>
+
+<table>
+  <tr>
+    <th>Medicine</th>
+    <th>Patient</th>
+    <th>Dosage quantity</th>
+    <th>Dossage type</th>
+    <th>Frequency</th>
+    <th>Frequency type</th>
+    <th>Special instructions</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @medicine_patient_relationships.each do |medicine_patient_relationship| %>
+  <tr>
+    <td><%= medicine_patient_relationship.medicine_id %></td>
+    <td><%= medicine_patient_relationship.patient_id %></td>
+    <td><%= medicine_patient_relationship.dosage_quantity %></td>
+    <td><%= medicine_patient_relationship.dossage_type_id %></td>
+    <td><%= medicine_patient_relationship.frequency %></td>
+    <td><%= medicine_patient_relationship.frequency_type_id %></td>
+    <td><%= medicine_patient_relationship.special_instructions_id %></td>
+    <td><%= link_to 'Show', medicine_patient_relationship %></td>
+    <td><%= link_to 'Edit', edit_medicine_patient_relationship_path(medicine_patient_relationship) %></td>
+    <td><%= link_to 'Destroy', medicine_patient_relationship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Medicine patient relationship', new_medicine_patient_relationship_path %>

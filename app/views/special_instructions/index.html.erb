@@ -1,0 +1,23 @@
+<h1>Listing special_instructions</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @special_instructions.each do |special_instruction| %>
+  <tr>
+    <td><%= special_instruction.name %></td>
+    <td><%= link_to 'Show', special_instruction %></td>
+    <td><%= link_to 'Edit', edit_special_instruction_path(special_instruction) %></td>
+    <td><%= link_to 'Destroy', special_instruction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Special instruction', new_special_instruction_path %>

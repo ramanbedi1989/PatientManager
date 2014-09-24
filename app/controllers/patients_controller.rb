@@ -45,6 +45,7 @@ class PatientsController < ApplicationController
     @patient = Patient.new(params[:patient])
     respond_to do |format|
       if @patient.save
+      	MedicalCampPatientRelationship.create(medical_camp_id: session[:medical_camp_id], patient_id: @patient.id)
         format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
         format.json { render json: @patient, status: :created, location: @patient }
       else

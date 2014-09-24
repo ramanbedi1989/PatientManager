@@ -8,5 +8,8 @@ class Patient < ActiveRecord::Base
 
   has_many :medical_camp_patient_relationships
   has_many :medical_camps, through: :medical_camp_patient_relationships
+
+  has_many :medicine_patient_relationships
+  has_many :medicines, through: :medicine_patient_relationships
   
 end

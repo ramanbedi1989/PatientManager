@@ -1,0 +1,23 @@
+<h1>Listing dossage_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dossage_types.each do |dossage_type| %>
+  <tr>
+    <td><%= dossage_type.name %></td>
+    <td><%= link_to 'Show', dossage_type %></td>
+    <td><%= link_to 'Edit', edit_dossage_type_path(dossage_type) %></td>
+    <td><%= link_to 'Destroy', dossage_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Dossage type', new_dossage_type_path %>

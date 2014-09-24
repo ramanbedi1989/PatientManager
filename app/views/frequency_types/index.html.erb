@@ -1,0 +1,23 @@
+<h1>Listing frequency_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @frequency_types.each do |frequency_type| %>
+  <tr>
+    <td><%= frequency_type.name %></td>
+    <td><%= link_to 'Show', frequency_type %></td>
+    <td><%= link_to 'Edit', edit_frequency_type_path(frequency_type) %></td>
+    <td><%= link_to 'Destroy', frequency_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Frequency type', new_frequency_type_path %>

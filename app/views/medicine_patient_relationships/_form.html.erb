@@ -1,0 +1,46 @@
+<%= form_for(@medicine_patient_relationship) do |f| %>
+  <% if @medicine_patient_relationship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@medicine_patient_relationship.errors.count, "error") %> prohibited this medicine_patient_relationship from being saved:</h2>
+
+      <ul>
+      <% @medicine_patient_relationship.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :medicine_id %><br />
+    <%= f.number_field :medicine_id %>
+  </div>
+  <div class="field">
+    <%= f.label :patient_id %><br />
+    <%= f.number_field :patient_id %>
+  </div>
+  <div class="field">
+    <%= f.label :dosage_quantity %><br />
+    <%= f.number_field :dosage_quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :dossage_type_id %><br />
+    <%= f.number_field :dossage_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :frequency %><br />
+    <%= f.number_field :frequency %>
+  </div>
+  <div class="field">
+    <%= f.label :frequency_type_id %><br />
+    <%= f.number_field :frequency_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :special_instruction_id %><br />
+    <%= f.number_field :special_instruction_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

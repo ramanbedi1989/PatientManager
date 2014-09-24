@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Medicine:</b>
+  <%= @medicine_patient_relationship.medicine_id %>
+</p>
+
+<p>
+  <b>Patient:</b>
+  <%= @medicine_patient_relationship.patient_id %>
+</p>
+
+<p>
+  <b>Dosage quantity:</b>
+  <%= @medicine_patient_relationship.dosage_quantity %>
+</p>
+
+<p>
+  <b>Dossage type:</b>
+  <%= @medicine_patient_relationship.dossage_type_id %>
+</p>
+
+<p>
+  <b>Frequency:</b>
+  <%= @medicine_patient_relationship.frequency %>
+</p>
+
+<p>
+  <b>Frequency type:</b>
+  <%= @medicine_patient_relationship.frequency_type_id %>
+</p>
+
+<p>
+  <b>Special instructions:</b>
+  <%= @medicine_patient_relationship.special_instructions_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_medicine_patient_relationship_path(@medicine_patient_relationship) %> |
+<%= link_to 'Back', medicine_patient_relationships_path %>

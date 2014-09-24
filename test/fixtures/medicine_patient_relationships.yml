@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  medicine_id: 1
+  patient_id: 1
+  dosage_quantity: 1
+  dossage_type_id: 1
+  frequency: 1
+  frequency_type_id: 1
+  special_instructions_id: 1
+
+two:
+  medicine_id: 1
+  patient_id: 1
+  dosage_quantity: 1
+  dossage_type_id: 1
+  frequency: 1
+  frequency_type_id: 1
+  special_instructions_id: 1

@@ -45,7 +45,7 @@
   </div>
   <div class="field">
     <%= f.label :town %><br />
-    <%= f.collection_select  :town_id , Town.all , :id , :town, class: 'chosen-select' %>
+    <%= f.collection_select  :town_id , Town.all , :id , :town, {}, class: 'chosen-select' %>
   </div>
   <div class="field">
     <%= f.label :medical_department %><br />
