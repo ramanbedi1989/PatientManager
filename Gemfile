@@ -1,16 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.15'
+gem 'rails', '4.1.5'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3', :group => [:development, :test]
-gem 'debugger'
-
-gem 'sass-rails',   '~> 3.2.3'
-gem 'coffee-rails', '~> 3.2.1'
-gem 'uglifier', '>= 1.0.3'
+gem 'byebug'
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
 # Gems used only for assets and not required
 # in production environments by default.
 #group :assets do
@@ -23,20 +22,25 @@ gem 'uglifier', '>= 1.0.3'
 #  gem 'uglifier', '>= 1.0.3'
 #end
 
-group :production do
-  gem 'pg'
-end
+#gem 'send_sms', git: "git@github.com:BeenaShetty/send_sms.git"
+gem 'send_sms', git: "git@github.com:ramanbedi1989/send_sms.git"
 
 gem 'thin'
-gem 'prawn'
+gem 'faye-rails'
+#gem 'faye-redis'
+gem 'rails-timeago', '~> 2.0'
+#gem 'unicorn'
+#gem 'unicorn-rails'
+gem 'prawn', '1.2.1'
 gem 'jquery-datatables-rails', '~> 1.12.2'
 gem 'jquery-rails'
-gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 
 gem 'mysql2'
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '5.0'
 gem 'chosen-rails'
-gem 'rails_admin'
+gem 'rails_admin', '0.7.0'#'0.6.3'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -40,9 +40,11 @@ PatientManager::Application.routes.draw do
   resources :patients
 
   #get 'patients#download'
-  match '/patients/download/:id' => 'patients#download'
+  match '/patients/download/:id' => 'patients#download', via: :get
 
-  root to: 'patients#index'
+  post 'chats/create', to: 'chats#create', as: 'chats'
+
+  root to: redirect("/admin/patient")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

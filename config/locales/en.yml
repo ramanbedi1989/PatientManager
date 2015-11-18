@@ -3,3 +3,9 @@
 
 en:
   hello: "Hello world"
+  admin:
+    actions:
+      print_patient:
+        menu: "Print"
+        breadcrumb: "Print Patient"
+        title: "Print Patient"

@@ -1,5 +1,18 @@
+#encoding: utf-8
 # RailsAdmin config file. Generated on September 23, 2014 22:38
 # See github.com/sferik/rails_admin for more informations
+require 'rails_admin_print_patient'
+
+module RailsAdmin
+  module Config
+    module Actions
+      class PrintPatient < RailsAdmin::Config::Actions::Base
+        RailsAdmin::Config::Actions.register(self)
+      end
+    end
+  end
+end
+
 
 RailsAdmin.config do |config|
 
@@ -7,13 +20,104 @@ RailsAdmin.config do |config|
   ################  Global configuration  ################
 
   # Set the admin name here (optional second array element will appear in red). For example:
-  config.main_app_name = ['Patient Manager', 'Admin']
+  config.main_app_name = ['Patient Manager', 'जय जिंद बाबाजी की']
   # or for a more dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
   # RailsAdmin may need a way to know who the current user is]
   config.current_user_method { current_user } # auto-generated
 
+  # config.model Movie do
+  # end
+
+  config.actions do
+    dashboard do
+      statistics false
+    end
+    index
+    new
+    export
+    show
+    edit
+    delete
+    print_patient
+  end
+
+  config.model 'Patient' do
+	  configure :medical_camp_patient_relationships do
+	    hide
+	    # for list view
+	    filterable false
+	    searchable false
+	  end
+	  configure :memberships do
+	    hide
+	    # for list view
+	    filterable false
+	    searchable false
+	  end
+	  show do
+	    field :id
+	    field :name
+	    field :father_spouse
+	    field :dob
+	    field :gender
+	    field :address
+	    field :town_id
+	    field :id_proof_number
+	    field :id_proof_id
+	    field :mobile
+	    field :diagnosis
+	    field :created_at
+	    field :updated_at
+	  end
+	  create do
+	    field :name
+	    field :father_spouse
+	    field :gender
+	    field :dob
+	    field :address
+	    field :town
+	    field :mobile
+	    field :id_proof_number
+	    field :id_proof
+	  end
+	  edit do
+	    field :name
+	    field :father_spouse
+	    field :gender
+	    field :dob
+	    field :address
+	    field :town
+	    field :id_proof_number
+	    field :id_proof
+	    field :mobile
+	    field :diagnosis
+	    field :medical_departments
+	    field :medical_camps
+	    field :medicine_patient_relationships
+	    field :medicines
+	  end
+	  list do
+	    field :id
+		  field :name
+		  field :gender
+		  field :address
+		  field :medical_camps
+		  field :father_spouse
+		  field :mobile
+   	end
+  # rest of your ParentModel configuration
+  end
+
+  config.model 'MedicinePatientRelationship' do
+  	configure :medicine_patient_special_instruction_relationships do
+	    hide
+	    # for list view
+	    filterable false
+	    searchable false
+	  end
+  end
   # If you want to track changes on your models:
   # config.audit_with :history, 'User'
 

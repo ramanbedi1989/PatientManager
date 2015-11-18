@@ -1,0 +1,19 @@
+<iframe id="PDFtoPrint" src="/patients/download/<%= @patient_id %>" frameborder="0" style="display: none;"></iframe>
+<div class="loadingIframe"><%= image_tag("loadingbar.gif") %></div>
+<span class="doneIframe" style="display: none;">Print is ready.</span>
+<script>
+	document.getElementById('PDFtoPrint').focus();
+	//document.getElementById('PDFtoPrint').contentWindow.document.execCommand('print', false, null);
+	document.getElementById('PDFtoPrint').contentWindow.onload = function(){
+		var self = this;
+		setTimeout(function(){
+			if(window.chrome){
+				self.document.execCommand('print', false, null);
+			}else{
+				self.print();
+			}
+			$('.doneIframe').show();
+			$('.loadingIframe').hide();
+		},2000);
+	}
+</script>

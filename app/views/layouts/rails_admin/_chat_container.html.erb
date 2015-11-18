@@ -1,0 +1,33 @@
+<div class="row chat-row">
+    <div class="chat-window col-xs-5 col-md-3 pull-right">
+        <div class="col-xs-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading top-bar">
+                    <div class="col-xs-12">
+                        <h3 class="panel-title"><span class="fa fa-comments"></span><span class="partner-name">Chat Box</span>
+                            <div class="pull-right">
+                                <a href="#"><span class="fa fa-plus panel-collapsed icon_minim"></span></a>
+                                <a href="#"><span class="fa fa-align-left icon-align"></span></a>
+                            </div>
+                        </h3>
+                    </div>
+                </div>
+                <div class="panel-body msg_container_base" style="display:none;">
+                    <% Chat.order('created_at ASC').limit(30).each do |message|%>
+                        <%= render partial: 'layouts/rails_admin/chat_message', locals: {message: message} %>
+                    <% end %>
+                </div>
+                <div class="panel-footer">
+                    <%= form_tag '/chats/create', method: :post, remote: true do %>
+                    <div class="input-group">
+                        <input name="message" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
+                        <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary btn-sm send-chat-message">Send</button>
+                        </span>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

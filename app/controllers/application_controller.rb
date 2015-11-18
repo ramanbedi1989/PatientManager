@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
-
-  before_filter :check_medical_camp
+#  protect_from_forgery
+#   protect_from_forgery :except => :create
+#  before_filter :check_medical_camp
 
   protected
   def check_medical_camp

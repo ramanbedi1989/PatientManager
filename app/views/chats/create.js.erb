@@ -1,0 +1,15 @@
+var client = new Faye.Client('/faye');
+
+var publisher = client.publish('/chats', {
+  message: "<%= j render partial: 'layouts/rails_admin/chat_message', locals: {message: @message} %>"
+});
+
+publisher.callback(function() {
+    $('.chat_input').val('');
+    var chat_container = $('.msg_container_base');
+    chat_container.scrollTop(chat_container.prop('scrollHeight'));
+});
+
+publisher.errback(function() {
+	//nothing here
+});
