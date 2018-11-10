@@ -3,6 +3,9 @@ class Medicine < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   has_many :medicine_patient_relationships
   has_many :patients, through: :medicine_patient_relationships
+
+  has_many :medicines_medicine_packs_relationships
+  has_many :medicine_packs, through: :medicines_medicine_packs_relationships
   belongs_to :dossage_type
   belongs_to :frequency_type
 

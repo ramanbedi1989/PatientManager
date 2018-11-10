@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="panel-body msg_container_base" style="display:none;">
-                    <% Chat.order('created_at ASC').limit(30).each do |message|%>
+                    <% Chat.order('created_at DESC').limit(30).sort_by(&:created_at).each do |message|%>
                         <%= render partial: 'layouts/rails_admin/chat_message', locals: {message: message} %>
                     <% end %>
                 </div>

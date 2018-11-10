@@ -12,22 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.all
-//= require bootstrap-sprockets
-//= require dataTables/jquery.dataTables
-//= require dataTables/jquery.dataTables.bootstrap3
-//= require dataTables/extras/TableTools
-//= require dataTables/extras/ZeroClipboard.js
-//= require chosen-jquery
 //= require_tree .
-$(document).ready(function(){
-  $('.datatable').dataTable({
-    "sPaginationType": "bootstrap",
-    "sDom": 'T<"clear">lfrtip',
-    "oTableTools": {
-            "sSwfPath": "/swf/copy_csv_xls_pdf.swf"
-        }
-  });
-  $('.chosen-select').chosen({width:'200px'});
- // $('.collapse').collapse();
-});

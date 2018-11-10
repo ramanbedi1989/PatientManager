@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  medicine_id: 1
+  medicine_pack_id: 1
+  default_days: 1
+
+two:
+  medicine_id: 1
+  medicine_pack_id: 1
+  default_days: 1

@@ -7,6 +7,11 @@ class MedicinePatientRelationship < ActiveRecord::Base
   belongs_to :frequency_type
   has_many :medicine_patient_special_instruction_relationships
   has_many :special_instructions, through: :medicine_patient_special_instruction_relationships
+  validates :medicine_id, presence: true
+  validates :patient_id, presence: true
+
+  validates :patient_id, uniqueness: {scope: :patient_id}
+
 
   after_initialize do
     if new_record?
@@ -30,5 +35,19 @@ class MedicinePatientRelationship < ActiveRecord::Base
 
   before_save do 
   	self.name ||= "#{self.medicine.name} - #{self.patient.name}" 	
+    med = self.medicine
+    if med
+      self.dossage_type ||=  med.dossage_type
+      self.frequency_type ||= med.frequency_type
+      self.dosage_quantity ||= med.default_dossage_quantity
+      self.frequency ||= med.default_frequency
+      self.days_taken ||= med.default_days_taken
+      if med.medicine_type
+        med_type_si = med.medicine_type.special_instructions
+        if self.special_instructions.blank?
+          self.special_instructions = med_type_si
+        end
+      end
+    end
   end
 end

@@ -86,6 +86,6 @@ class PatientsController < ApplicationController
   def download
     patient_id = params[:id]
     GeneratePDF.generate(patient_id)
-    send_file 'lib/output/new.pdf', type: "application/pdf", x_sendfile: true, disposition: :inline
+    send_file "lib/output/#{patient_id}.pdf", type: "application/pdf", x_sendfile: true, disposition: :inline
   end
 end

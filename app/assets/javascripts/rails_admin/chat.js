@@ -18,9 +18,10 @@ $(function(){
         }
     });
 
-    /*var message_container = $('.chat-window').find('.panel-body');
-    console.log(message_container.prop('scrollHeight'));
-    message_container.scrollTop(message_container.prop('scrollHeight'));*/
+    var message_container = $('.chat-window').find('.panel-body');
+    message_container.show();
+    message_container.scrollTop(message_container.prop('scrollHeight'));
+    message_container.hide();
 });
 
 

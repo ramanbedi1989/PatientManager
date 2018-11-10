@@ -41,6 +41,7 @@ RailsAdmin.config do |config|
     edit
     delete
     print_patient
+    charts
   end
 
   config.model 'Patient' do
@@ -73,9 +74,14 @@ RailsAdmin.config do |config|
 	  end
 	  create do
 	    field :name
-	    field :father_spouse
+	    field :father_spouse do
+        label "Father / Spouse"
+      end
 	    field :gender
 	    field :dob
+      field :age_input do 
+        label "Age"
+      end
 	    field :address
 	    field :town
 	    field :mobile
@@ -84,9 +90,14 @@ RailsAdmin.config do |config|
 	  end
 	  edit do
 	    field :name
-	    field :father_spouse
+	    field :father_spouse do
+        label "Father / Spouse"
+      end
 	    field :gender
 	    field :dob
+      field :age_input do 
+        label "Age"
+      end
 	    field :address
 	    field :town
 	    field :id_proof_number
@@ -97,6 +108,8 @@ RailsAdmin.config do |config|
 	    field :medical_camps
 	    field :medicine_patient_relationships
 	    field :medicines
+      field :medicine_packs
+      field :medicine_packs_patients_relationships
 	  end
 	  list do
 	    field :id

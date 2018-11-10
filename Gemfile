@@ -10,6 +10,7 @@ gem 'byebug'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
+
 # Gems used only for assets and not required
 # in production environments by default.
 #group :assets do
@@ -38,9 +39,11 @@ gem 'jquery-rails'
 gem 'mysql2'
 gem 'jquery-ui-rails', '5.0'
 gem 'chosen-rails'
-gem 'rails_admin', '0.7.0'#'0.6.3'
+gem 'rails_admin', '1.1.1'#'0.6.3'
+gem 'rails_admin_charts'
 gem 'bootstrap-sass', '~> 3.2.0'
-gem 'autoprefixer-rails'
+gem 'autoprefixer-rails', '~>4.0'
+gem 'compass-rails', '>2.0.2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

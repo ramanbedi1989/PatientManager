@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151115051724) do
+ActiveRecord::Schema.define(version: 20151126023812) do
 
   create_table "chat_locations", force: true do |t|
     t.string   "name"
@@ -73,6 +73,22 @@ ActiveRecord::Schema.define(version: 20151115051724) do
     t.string   "room_no"
   end
 
+  create_table "medicine_packs", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "medicine_packs_patients_relationships", force: true do |t|
+    t.integer  "patient_id"
+    t.integer  "medicine_pack_id"
+    t.integer  "default_days"
+    t.integer  "medical_camp_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "medicine_patient_relationships", force: true do |t|
     t.integer  "medicine_id"
     t.integer  "patient_id"
@@ -120,6 +136,15 @@ ActiveRecord::Schema.define(version: 20151115051724) do
   end
 
   add_index "medicines", ["name"], name: "index_medicines_on_name", using: :btree
+
+  create_table "medicines_medicine_packs_relationships", force: true do |t|
+    t.integer  "medicine_id"
+    t.integer  "medicine_pack_id"
+    t.integer  "default_days"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "memberships", force: true do |t|
     t.integer  "patient_id"

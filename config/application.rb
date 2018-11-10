@@ -61,5 +61,6 @@ module PatientManager
     config.middleware.delete Rack::Lock
     config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 25
     config.assets.initialize_on_precompile = false
+    config.assets.precompile += %w( rails_admin/rails_admin.css rails_admin/chat.css rails_admin/rails_admin.js rails_admin/chat.js)
   end
 end

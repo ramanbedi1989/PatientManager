@@ -2,9 +2,10 @@
 class GeneratePDF
   HINDI_HEALTH_INSTRUCTIONS = [
     "आयोडीन युक्त नमक का सेवन करें।",
-    "गर्भ के दौरान नियमित जाँच व आयरन फॉलिक ऐसिड की गोलिया से जच्चा और",
+    "गर्भ के दौरान िनयिमत जाँच व आयरन फॉिलक ऐिसड की गोिलयों से जच्चा और",
     "बच्चा दोनों रहें स्वस्थ।",
-    "धूम्रपान का सेवन , कैंसर को दावत।"
+    "धूम्रपान का सेवन , कैंसर को दावत।",
+    "स्वछता अपनाओ रोग भगाओ।"
   ]
   def self.generate(id)
     Dir.chdir("lib/output") do
@@ -13,8 +14,8 @@ class GeneratePDF
       if patient
         all_patient_medicines = patient.medicine_patient_relationships.to_a
         medicines_index = 0
-        Prawn::Document.generate("new.pdf" , margin: 0 , page_size: 'A4') do |pdf|
-          pdf.font_families.update("MANGAL"=>{:normal =>"#{Rails.root}/lib/fonts/Arial_Unicode_MS.ttf"})
+        Prawn::Document.generate("#{patient.id}.pdf" , margin: 0 , page_size: 'A4') do |pdf|
+          pdf.font_families.update("MANGAL"=>{:normal =>"#{Rails.root}/lib/fonts/aparaj.ttf"})
           #pdf.image image, :at  => [0, Prawn::Document::PageGeometry::SIZES["A4"][1]],:fit => Prawn::Document::PageGeometry::SIZES["A4"]
           bounding_box = pdf.bounds
           b_height = bounding_box.height
@@ -105,9 +106,9 @@ class GeneratePDF
               while medicines_index < all_patient_medicines.count
                 med = all_patient_medicines[medicines_index]
                 medicines_index += 1
-              	pdf.draw_text "#{med.medicine.name}", at: [initial_width,(initial_height - i*line_diff)] 
+                pdf.draw_text "#{med.medicine.name}", at: [initial_width,(initial_height - i*line_diff)] 
                 i += 1
-              	pdf.draw_text "#{med.try(:dosage_quantity)} #{med.try(:dossage_type).try(:hindi_name)}, #{med.try(:frequency)} #{med.try(:frequency_type).try(:hindi_name)}, #{med.try(:days_taken)} िदनो के िलए", at: [instruction_width,(initial_height - i*line_diff)] 
+                pdf.draw_text "#{med.try(:dosage_quantity)} #{med.try(:dossage_type).try(:hindi_name)}, #{med.try(:frequency)} #{med.try(:frequency_type).try(:hindi_name)}, #{med.try(:days_taken)} िदनो के िलए", at: [instruction_width,(initial_height - i*line_diff)] 
                 special_instructions = med.special_instructions
                 if special_instructions.present?
                   i += 1
