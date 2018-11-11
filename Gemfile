@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.5'
+gem 'rails', '4.2.10'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'dotenv-rails'
 gem 'sqlite3', :group => [:development, :test]
 gem 'byebug'
 gem 'sass-rails'
@@ -24,10 +24,11 @@ gem 'uglifier'
 #end
 
 #gem 'send_sms', git: "git@github.com:BeenaShetty/send_sms.git"
-gem 'send_sms', git: "git@github.com:ramanbedi1989/send_sms.git"
+#gem 'send_sms', git: "git@github.com:ramanbedi1989/send_sms.git"
 
 gem 'thin'
 gem 'faye-rails'
+
 #gem 'faye-redis'
 gem 'rails-timeago', '~> 2.0'
 #gem 'unicorn'
@@ -36,13 +37,13 @@ gem 'prawn', '1.2.1'
 gem 'jquery-datatables-rails', '~> 1.12.2'
 gem 'jquery-rails'
 
-gem 'mysql2'
+gem 'mysql2', '~> 0.4.0'
 gem 'jquery-ui-rails', '5.0'
 gem 'chosen-rails'
 gem 'rails_admin', '1.1.1'#'0.6.3'
 gem 'rails_admin_charts'
 gem 'bootstrap-sass', '~> 3.2.0'
-gem 'autoprefixer-rails', '~>4.0'
+gem 'autoprefixer-rails', '~> 7.1.6'
 gem 'compass-rails', '>2.0.2'
 
 # To use ActiveModel has_secure_password

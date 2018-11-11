@@ -15,3 +15,4 @@
 /tmp
 /lib/output
 /public/assets
+.env
